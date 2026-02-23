@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-config
+  namespace: gitops-demo
+data:
+  MESSAGE: "Hola desde GitOps (BASE)"

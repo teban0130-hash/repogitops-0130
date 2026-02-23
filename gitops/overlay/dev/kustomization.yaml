@@ -1,0 +1,17 @@
+resources:
+  - ../../base
+
+images:
+  - name: REPLACE_IMAGE
+    newName: 130054799918.dkr.ecr.us-west-2.amazonaws.com/gitops-web
+    newTag: v1
+
+patches:
+  - target:
+      kind: Deployment
+      name: web
+      namespace: gitops-demo
+    patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 2
